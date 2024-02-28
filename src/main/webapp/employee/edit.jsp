@@ -1,5 +1,6 @@
 
-<%@ page import="com.example.exam_sever.entities.Employee" %><%--
+<%@ page import="com.example.exam_sever.entities.Employee" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: hiennd
   Date: 25/01/2024
@@ -40,7 +41,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputAddress2" class="form-label">Birthday</label>
-            <input name="birthday" value="<%= employee.getBirthday() %>" type="date" class="form-control"
+            <input name="birthday" value=" <%= new SimpleDateFormat("yyyy-MM-dd").format(employee.getBirthday()) %>" type="date" class="form-control"
                    id="exampleInputAddress2">
         </div>
 

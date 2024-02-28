@@ -67,7 +67,7 @@ public class EmployeeController extends HttpServlet {
         String employeeId = req.getParameter("id");
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            Employee employee = session.get(Employee.class, Integer.parseInt(employeeId));
+            Employee employee = session.get(Employee.class,(employeeId));
             if (employee != null) {
                 session.delete(employee);
             }
