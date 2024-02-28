@@ -40,7 +40,7 @@ public class EmployeeEditController extends HttpServlet
         String employeeId = req.getParameter("id");
         try   (Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Employee employee = session.get(Employee.class,Integer.parseInt(employeeId));
+            Employee employee = session.get(Employee.class,(employeeId));
             session.getTransaction().commit();
             if (employee != null){
                 req.setAttribute("employee",employee);
